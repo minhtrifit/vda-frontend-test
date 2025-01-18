@@ -16,7 +16,7 @@
 
 /* ============================== Scrollbar ============================== */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -226,6 +226,7 @@
 #flash-sale {
   position: relative;
   background-color: var(--orange-white);
+  /* background-color: rgb(121, 33, 33); */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -245,6 +246,123 @@
 
 #flash-sale .article img:nth-child(2) {
   width: 200px;
+}
+
+.swiper.flash-sale-swiper {
+  width: 80%;
+  margin-top: 50px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: var(--black-color);
+  background-color: var(--white);
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.swiper-button-prev {
+  background-image: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 0-.708 0l-6 6a.5.5 0 0 0 0 .708l6 6a.5.5 0 0 0 .708-.708L5.707 8l5.647-5.646a.5.5 0 0 0 0-.708z"/></svg>');
+}
+
+.swiper-button-next {
+  background-image: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/></svg>');
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: "";
+}
+
+.product-sale-card {
+  position: relative;
+  background-color: var(--white);
+  padding: 10px 10px;
+}
+
+.product-sale-card img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.product-sale-card .sale-tag {
+  position: absolute;
+  top: 10px;
+  background-color: var(--orange-color);
+  color: var(--white);
+  font-size: 0.9rem;
+  padding: 3px 5px;
+}
+
+/* ============================== Product category section ============================== */
+#product-category {
+  position: relative;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 100px 0;
+}
+
+#product-category .view-all-btn {
+  color: var(--white);
+  font-size: 0.8rem;
+  background-color: var(--orange-color);
+  border-radius: 100px;
+  padding: 15px 40px;
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 20;
+}
+
+.swiper.product-category-swiper {
+  width: 80%;
+  height: 300px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.product-category-card {
+  display: flex;
+  justify-content: center;
+}
+
+.product-category-card img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-category-card .title {
+  position: absolute;
+  bottom: 30px;
+  left: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#product-category .article {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+#product-category .article img {
+  width: 350px;
 }
 
 /* ============================== Responsive ============================== */
@@ -279,6 +397,20 @@
   #flash-sale .article img:nth-child(2) {
     width: 150px;
   }
+
+  .product-category-card img {
+    width: 95%;
+  }
+
+  /* ============================== Product category ============================== */
+  .product-category-card .title {
+    bottom: 30px;
+    left: 60px;
+  }
+
+  #product-category .article img {
+    width: 300px;
+  }
 }
 
 @media (max-width: 1366px) {
@@ -310,6 +442,12 @@
     top: -70px;
     left: 200px;
   }
+
+  /* ============================== Product category ============================== */
+  .product-category-card .title {
+    bottom: 30px;
+    left: 40px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -337,6 +475,12 @@
   /* ============================== Flash sale ============================== */
   #flash-sale span {
     max-width: 500px;
+  }
+
+  /* ============================== Product category ============================== */
+  .product-category-card .title {
+    bottom: 30px;
+    left: 50px;
   }
 }
 
@@ -390,5 +534,22 @@
 
   #flash-sale .article img:nth-child(2) {
     width: 100px;
+  }
+
+  /* ============================== Product category section ============================== */
+  /* #product-category .view-all-btn {
+    color: var(--white);
+    font-size: 0.5rem;
+    padding: 5px 10px;
+    gap: 10px;
+  } */
+
+  .product-category-card .title {
+    bottom: 30px;
+    left: 50px;
+  }
+
+  #product-category .article img {
+    width: 150px;
   }
 }
