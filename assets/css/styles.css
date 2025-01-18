@@ -7,5 +7,98 @@
 
 :root {
   --orange-color: #fa5a0a;
+  --orange-2-color: #fb7531;
   --black-color: #05141f;
+  --white: #fff;
+}
+
+/* Navbar */
+.main-navbar {
+  padding: 20px 250px;
+  background-color: var(--orange-color);
+}
+
+.navbar-logo {
+  width: 120px;
+}
+
+.search-form {
+  width: 700px;
+}
+
+.navbar-right-control {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: var(--white);
+}
+
+.navbar-right-control .auth-title:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.navbar-right-control .cart-btn {
+  color: var(--white);
+  background-color: var(--orange-2-color);
+}
+
+.menu-control {
+  display: none;
+}
+
+.menu-control .dropdown-toggle::after {
+  display: none; /* Ẩn mũi tên */
+}
+
+.menu-control .menu-control-btn {
+  color: var(--white);
+  background-color: var(--orange-2-color);
+}
+
+.menu-control .dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Responsive */
+@media (max-width: 1600px) {
+  .search-form {
+    width: 500px;
+  }
+}
+
+@media (max-width: 1366px) {
+  .main-navbar {
+    padding: 20px 100px;
+  }
+
+  .search-form {
+    width: 400px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .search-form {
+    width: 300px;
+  }
+
+  .navbar-right-control {
+    display: none;
+  }
+
+  .menu-control {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-navbar {
+    padding: 20px 20px;
+  }
+
+  .search-form {
+    display: none;
+  }
 }
