@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Nunito", serif;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -10,9 +11,37 @@
   --orange-2-color: #fb7531;
   --black-color: #05141f;
   --white: #fff;
+  --orange-white: #fdf5f3;
 }
 
-/* Navbar */
+/* ============================== Scrollbar ============================== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f4f4f4;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--orange-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--orange-2-color);
+}
+
+/* ============================== Main header ============================== */
+.main-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+/* ============================== Main navbar ============================== */
 .main-navbar {
   padding: 20px 250px;
   background-color: var(--orange-color);
@@ -20,6 +49,10 @@
 
 .navbar-logo {
   width: 120px;
+}
+
+.navbar-logo:hover {
+  cursor: pointer;
 }
 
 .search-form {
@@ -62,14 +95,194 @@
   gap: 10px;
 }
 
-/* Responsive */
+/* ============================== Sub navbar ============================== */
+.sub-navbar {
+  color: var(--white);
+  background-color: var(--black-color);
+  padding: 10px 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sub-navbar .right-title {
+  font-size: 0.85rem;
+  color: var(--orange-color);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sub-navbar .section-content {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 0.9rem;
+}
+
+.sub-navbar .section-content-menu {
+  display: none;
+}
+
+.sub-navbar .section-content .list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.sub-navbar .section-content .target {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.sub-navbar .section-content .target:hover {
+  color: var(--orange-color);
+}
+
+.sub-navbar .section-content .product-dropdown button {
+  color: var(--white);
+}
+
+.sub-navbar .section-content .product-dropdown button:hover {
+  color: var(--orange-color);
+}
+
+.sub-navbar .section-content .product-dropdown .dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sub-navbar .section-content-menu .product-dropdown button {
+  color: var(--white);
+}
+
+/* ============================== Banner ============================== */
+.banner {
+  margin-top: 137.6px;
+}
+
+.banner .carousel-indicators {
+  display: flex;
+  gap: 10px;
+}
+
+.banner .carousel-indicators .none-active {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: var(--black-color);
+}
+
+.banner .carousel-indicators .active {
+  width: 30px;
+  background-color: var(--orange-color);
+  border-radius: 0;
+}
+
+.banner .banner-item {
+  position: relative;
+}
+
+.banner .banner-item .title {
+  position: absolute;
+  top: 20%;
+  left: 250px;
+}
+
+.banner .banner-item .title div {
+  position: relative;
+}
+
+.banner .banner-item .title h1 {
+  font-size: 4rem;
+  display: flex;
+  gap: 20px;
+}
+
+.banner .banner-item .title img {
+  width: 500px;
+  position: absolute;
+  top: -150px;
+  left: 300px;
+}
+
+.banner .discover-more-btn {
+  color: var(--white);
+  font-size: 0.8rem;
+  background-color: var(--orange-color);
+  border-radius: 100px;
+  padding: 15px 40px;
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ============================== Flash sale section ============================== */
+#flash-sale {
+  position: relative;
+  background-color: var(--orange-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 100px 0;
+}
+
+#flash-sale .article {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#flash-sale .article img:nth-child(1) {
+  width: 150px;
+}
+
+#flash-sale .article img:nth-child(2) {
+  width: 200px;
+}
+
+/* ============================== Responsive ============================== */
+
 @media (max-width: 1600px) {
+  /* ============================== Main navbar ============================== */
+  .main-navbar {
+    padding: 20px 180px;
+  }
+
   .search-form {
     width: 500px;
+  }
+
+  .sub-navbar {
+    padding: 10px 180px;
+  }
+
+  /* ============================== Banner ============================== */
+  .banner .banner-item .title {
+    left: 180px;
+  }
+
+  .banner .banner-item .title img {
+    width: 400px;
+  }
+
+  #flash-sale .article img:nth-child(1) {
+    width: 100px;
+  }
+
+  #flash-sale .article img:nth-child(2) {
+    width: 150px;
   }
 }
 
 @media (max-width: 1366px) {
+  /* ============================== Main navbar ============================== */
   .main-navbar {
     padding: 20px 100px;
   }
@@ -77,9 +290,30 @@
   .search-form {
     width: 400px;
   }
+
+  .sub-navbar {
+    padding: 10px 100px;
+  }
+
+  /* ============================== Banner ============================== */
+  .banner .banner-item .title {
+    left: 100px;
+  }
+
+  .banner .banner-item .title h1 {
+    font-size: 2.5rem;
+    gap: 15px;
+  }
+
+  .banner .banner-item .title img {
+    width: 250px;
+    top: -70px;
+    left: 200px;
+  }
 }
 
 @media (max-width: 1024px) {
+  /* ============================== Main navbar ============================== */
   .search-form {
     width: 300px;
   }
@@ -91,14 +325,70 @@
   .menu-control {
     display: block;
   }
+
+  .sub-navbar .section-content-menu {
+    display: block;
+  }
+
+  .sub-navbar .section-content {
+    display: none;
+  }
+
+  /* ============================== Flash sale ============================== */
+  #flash-sale span {
+    max-width: 500px;
+  }
 }
 
 @media (max-width: 768px) {
+  /* ============================== Main navbar ============================== */
   .main-navbar {
     padding: 20px 20px;
   }
 
   .search-form {
     display: none;
+  }
+
+  .sub-navbar {
+    padding: 10px 20px;
+  }
+
+  /* ============================== Banner ============================== */
+  .banner .banner-item .title {
+    top: 15%;
+    left: 20px;
+  }
+
+  .banner .banner-item .title h1 {
+    font-size: 1.25rem;
+    gap: 10px;
+  }
+
+  .banner .banner-item .title img {
+    width: 130px;
+    top: -30px;
+    left: 90px;
+  }
+
+  .banner .discover-more-btn {
+    color: var(--white);
+    font-size: 0.5rem;
+    padding: 5px 10px;
+    gap: 10px;
+  }
+
+  /* ============================== Flash sale ============================== */
+  #flash-sale span {
+    max-width: 400px;
+    font-size: 0.8rem;
+  }
+
+  #flash-sale .article img:nth-child(1) {
+    width: 50px;
+  }
+
+  #flash-sale .article img:nth-child(2) {
+    width: 100px;
   }
 }
