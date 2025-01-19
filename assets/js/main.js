@@ -300,3 +300,24 @@ navItems.forEach((tab) => {
 });
 
 loadShowRoomItem(navItems[0], "tab1");
+
+// ============================== New event slider ==============================
+const newEventSwiper = new Swiper(".new-event-swiper", {
+  direction: "horizontal",
+  loop: true,
+  spaceBetween: 10,
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 4,
+    },
+  },
+});

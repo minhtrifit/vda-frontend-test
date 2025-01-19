@@ -113,6 +113,12 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  text-decoration: none;
+}
+
+.sub-navbar .right-title:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .sub-navbar .section-content {
@@ -578,6 +584,36 @@
   z-index: 20;
 }
 
+/* ============================== New event section ============================== */
+#new-event {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--white);
+  padding: 150px 250px;
+}
+
+.swiper.new-event-swiper {
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+#new-event .view-all-btn {
+  color: var(--white);
+  font-size: 0.8rem;
+  background-color: var(--orange-color);
+  border-radius: 100px;
+  padding: 15px 40px;
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  z-index: 20;
+}
+
 /* ============================== Responsive ============================== */
 
 @media (max-width: 1600px) {
@@ -643,6 +679,11 @@
   #showroom .nav_tabs .nav_item {
     font-size: 0.9rem;
   }
+
+  /* ============================== New event ============================== */
+  #new-event {
+    padding: 150px 180px;
+  }
 }
 
 @media (max-width: 1366px) {
@@ -694,6 +735,15 @@
   /* ============================== Showroom ============================== */
   #showroom {
     padding: 150px 100px;
+  }
+
+  /* ============================== New event ============================== */
+  #new-event {
+    padding: 100px 20px;
+  }
+
+  .swiper.new-event-swiper {
+    width: 90%;
   }
 }
 
@@ -842,5 +892,10 @@
   #showroom .article {
     width: 300px;
     left: -120px;
+  }
+
+  /* ============================== New evnt ============================== */
+  #new-event {
+    padding: 100px 20px;
   }
 }
