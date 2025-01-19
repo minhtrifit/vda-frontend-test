@@ -6,7 +6,7 @@ navbarLogo.addEventListener("click", function () {
 });
 
 // ============================== Flash sale slider ==============================
-const flashSaleSwiper = new Swiper(".swiper.flash-sale-swiper", {
+const flashSaleSwiper = new Swiper(".flash-sale-swiper", {
   direction: "horizontal",
   loop: true,
   spaceBetween: 10,
@@ -28,6 +28,27 @@ const flashSaleSwiper = new Swiper(".swiper.flash-sale-swiper", {
 
 // ============================== Product category slider ==============================
 var swiper = new Swiper(".product-category-swiper", {
+  direction: "horizontal",
+  loop: true,
+  spaceBetween: 10,
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  },
+});
+
+// ============================== Massage chair slider ==============================
+const massageChairSwiper = new Swiper(".massage-chair-swiper", {
   direction: "horizontal",
   loop: true,
   spaceBetween: 10,

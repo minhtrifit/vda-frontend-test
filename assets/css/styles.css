@@ -234,6 +234,11 @@
   padding: 100px 0;
 }
 
+#flash-sale .description {
+  max-width: 500px;
+  text-align: center;
+}
+
 #flash-sale .article {
   position: absolute;
   top: 0;
@@ -329,7 +334,6 @@
 
 .swiper.product-category-swiper {
   width: 80%;
-  height: 300px;
   margin-top: 50px;
   margin-bottom: 30px;
 }
@@ -363,6 +367,84 @@
 
 #product-category .article img {
   width: 350px;
+}
+
+/* ============================== Massage chair section ============================== */
+#massage-chair {
+  position: relative;
+  background-color: var(--orange-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 100px 0;
+}
+
+#massage-chair .description {
+  max-width: 500px;
+  text-align: center;
+}
+
+.swiper.massage-chair-swiper {
+  width: 80%;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.massage-chair-card {
+  position: relative;
+  background-color: var(--white);
+  padding: 10px 10px;
+}
+
+.massage-chair-card img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.massage-chair-card .sale-tag {
+  position: absolute;
+  top: 10px;
+  background-color: var(--orange-color);
+  color: var(--white);
+  font-size: 0.9rem;
+  padding: 3px 5px;
+}
+
+/* ============================== Customer review section ============================== */
+#customer-review {
+  position: relative;
+  display: flex;
+}
+
+#customer-review .left {
+  width: 50%;
+  background-color: var(--orange-2-color);
+  padding-left: 250px;
+  padding-right: 80px;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#customer-review .right {
+  width: 50%;
+}
+
+#customer-review .right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#customer-review .article {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
 }
 
 /* ============================== Responsive ============================== */
@@ -411,6 +493,16 @@
   #product-category .article img {
     width: 300px;
   }
+
+  /* ============================== Customer review ============================== */
+  #customer-review .left {
+    padding-left: 180px;
+    padding-right: 180px;
+  }
+
+  #customer-review .article {
+    width: 600px;
+  }
 }
 
 @media (max-width: 1366px) {
@@ -448,6 +540,16 @@
     bottom: 30px;
     left: 40px;
   }
+
+  /* ============================== Customer review ============================== */
+  #customer-review .left {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  #customer-review .article {
+    width: 500px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -481,6 +583,15 @@
   .product-category-card .title {
     bottom: 30px;
     left: 50px;
+  }
+
+  /* ============================== Customer review ============================== */
+  #customer-review .left {
+    width: 100%;
+  }
+
+  #customer-review .right {
+    display: none;
   }
 }
 
@@ -551,5 +662,15 @@
 
   #product-category .article img {
     width: 150px;
+  }
+
+  /* ============================== Customer review ============================== */
+  #customer-review .left {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  #customer-review .article {
+    width: 400px;
   }
 }
